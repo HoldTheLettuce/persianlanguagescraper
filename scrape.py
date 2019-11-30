@@ -28,9 +28,6 @@ print('Fetched content.')
 
 lines = response.content.splitlines()
 
-# TODO:
-# Don't re-download mp3 files: duplicate check
-# count mp3 downloads
 for line in lines:
     parsedLine = str(line)
     if 'mp3: "' in parsedLine:
