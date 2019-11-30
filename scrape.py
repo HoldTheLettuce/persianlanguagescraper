@@ -4,6 +4,8 @@ import shutil
 import re
 import os
 
+# Used https://www.persianlanguageonline.com/learn/nice-to-meet-you for test url
+
 url = input('What is the url of the glossary section you want to scrape? ')
 
 topic = url.split('/')[4]
@@ -18,7 +20,7 @@ if not os.path.exists(dir):
 else:
     print('Directory:', dir, 'Already exists, continuing...')
 
-response = requests.get('https://www.persianlanguageonline.com/learn/nice-to-meet-you')
+response = requests.get(url)
 
 if response.status_code != 200:
     print('Failed to fetch content! Status Code:', response.status_code)
